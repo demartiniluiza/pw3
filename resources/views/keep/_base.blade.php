@@ -8,6 +8,6 @@
 <body>
     <h1>💡Little keep</h1>
     <hr>
-    @yield('conteudo');
+    @yield('conteudo')
 </body>
 </html>
