@@ -9,12 +9,14 @@
             @endforeach
         </ul>
     </div>
-<form method="post">
+    @endif
+<form method="post" action="{{ route('keep.create') }}">
     @csrf
-    <textarea name="nota"></textarea>
+    <textarea name="nota">{{ old('nota') }}</textarea>
     <br>
-    <input type="color" name="cor">
+    <input type="color" name="cor" value="{{ old('cor') }}">
     <br>
     <input type="submit" value="Gravar">
 </form>
+
 @endsection

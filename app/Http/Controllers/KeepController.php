@@ -18,12 +18,12 @@ class keepController extends Controller
         if ($request->isMethod('post')){
 
             $dados =  $request->validate([
-                'nota' => 'required',
+                'nota' => 'required|min:5|max:255',
                 'cor' => 'required',
             ]);
             
             Nota::create($dados);
-            return redirect()->route('keep.index');
+            return redirect()->route('keep.index')->with('mensagem', 'Nota criada com sucesso.');
         }
         return view('keep/create');
     }
